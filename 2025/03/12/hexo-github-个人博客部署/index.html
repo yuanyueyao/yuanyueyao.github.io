@@ -27,7 +27,7 @@
 <meta property="og:description" content="一个详细、完善的 Hexo 博客部署教程，不仅涵盖了基本的安装、配置、生成与部署步骤，还增加了常见问题的解决、主题设置和使用 SSH 方式部署的补充说明。  一、安装 Hexo、Node.js 和 Git 部署插件1.1 安装 Node.js确保你的系统已经安装 Node.js（建议使用 LTS 版本），可以从 Node.js 官网 下载并安装。 1.2 全局安装 Hexo CLI使用 npm 安">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-12T11:44:11.000Z">
-<meta property="article:modified_time" content="2025-03-12T14:04:23.777Z">
+<meta property="article:modified_time" content="2025-03-12T14:05:42.815Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -309,7 +309,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-comment"># 清理旧文件</span><br>hexo clean<br><span class="hljs-comment"># 生成新文件</span><br>hexo g<br><span class="hljs-comment"># 部署到 GitHub Pages</span><br>hexo d<br></code></pre></td></tr></table></figure>
 <p>记得给脚本执行权限：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">chmod</span> +x deploy.sh<br></code></pre></td></tr></table></figure>
-<p>以后只需运行 <code>./deploy.sh</code> 即可完成部署。</p>
+<p>以后只需运行 <code>bash deploy.sh</code> 即可完成部署。 </p>
 <hr>
 <h2 id="四、使用主题美化界面"><a href="#四、使用主题美化界面" class="headerlink" title="四、使用主题美化界面"></a>四、使用主题美化界面</h2><h3 id="4-1-选择并安装主题"><a href="#4-1-选择并安装主题" class="headerlink" title="4.1 选择并安装主题"></a>4.1 选择并安装主题</h3><p>Hexo 拥有大量开源主题，你可以在 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo 主题库</a> 中选择适合你的主题。本文以 <strong>fuild</strong> 主题为例，安装步骤大致如下：</p>
 <ol>
