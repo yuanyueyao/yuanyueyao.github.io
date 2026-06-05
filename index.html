@@ -4,230 +4,180 @@
   PERSONAL PLACEHOLDERS TO REPLACE (search for "PLACEHOLDER:"):
     - PLACEHOLDER:NAME_EN      your English name
     - PLACEHOLDER:NAME_ZH      your Chinese name
-    - yuanyueyao       your GitHub username (also your site URL)
     - PLACEHOLDER:EMAIL        contact email
     - PLACEHOLDER:SCHOLAR      Google Scholar URL (or remove the link)
-    - PLACEHOLDER:ORCID        ORCID URL (or remove)
+    - PLACEHOLDER:X            X/Twitter URL (or remove)
     - PLACEHOLDER:ADVISOR      ZJU advisor name
     - PLACEHOLDER:UNDERGRAD    undergraduate school / major / years / GPA
-    - PLACEHOLDER:EMNLP_TITLE  EMNLP 2026 paper title + authors
+    - PLACEHOLDER:EMNLP_TITLE  EMNLP 2026 paper title
+    - PLACEHOLDER:AUTHORS      author list for each paper
     - PLACEHOLDER:HONORS       honors / awards
     - assets/avatar.jpg        replace with your real photo (or keep the SVG)
+  GitHub username (yuanyueyao) and ZJU are already filled in.
+  Style imitates the dominant top-conference homepage look (see STYLE_RESEARCH.md):
+  single-column ~720px, sans-serif system font, white bg, blue inline links.
   ============================================================================
 -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PLACEHOLDER:NAME_EN — Academic Homepage</title>
-  <meta name="description" content="Academic homepage of PLACEHOLDER:NAME_EN — M.S. in Computer Science at Zhejiang University. Research on large language models, post-training, and reinforcement learning for reasoning." />
+  <title>PLACEHOLDER:NAME_EN</title>
+  <meta name="description" content="PLACEHOLDER:NAME_EN — incoming M.S. in Computer Science at Zhejiang University. Large language models: post-training and reinforcement learning for reasoning." />
   <meta name="author" content="PLACEHOLDER:NAME_EN" />
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PLACEHOLDER:NAME_EN — Academic Homepage" />
+  <meta property="og:title" content="PLACEHOLDER:NAME_EN" />
   <meta property="og:description" content="LLM post-training & reinforcement learning for reasoning. M.S. CS, Zhejiang University." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- ===================== NAV ===================== -->
-  <nav class="nav">
-    <a class="nav__brand" href="#top">PLACEHOLDER:NAME_EN</a>
-    <div class="nav__links">
-      <a href="#about">About</a>
-      <a href="#news">News</a>
-      <a href="#publications">Publications</a>
-      <a href="#research">Research</a>
-      <a href="#education">Education</a>
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
-    </div>
-  </nav>
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
 
-  <main id="top" class="container">
+  <main class="wrap">
 
     <!-- ===================== HEADER ===================== -->
-    <header class="hero">
-      <img class="hero__avatar" src="assets/avatar.svg" alt="Portrait of PLACEHOLDER:NAME_EN" />
-      <div class="hero__intro">
-        <h1 class="hero__name">PLACEHOLDER:NAME_EN <span class="hero__name-zh">PLACEHOLDER:NAME_ZH</span></h1>
-        <p class="hero__title">M.S. in Computer Science, <strong>Zhejiang University</strong> <span class="muted">· incoming Sept 2026</span></p>
-        <p class="hero__tagline">
-          I work on <strong>large language models</strong> — post-training and
-          <strong>reinforcement learning for reasoning</strong>: reward design,
-          credit assignment, and training stability.
-        </p>
-        <ul class="hero__links">
-          <li><a href="mailto:PLACEHOLDER:EMAIL">✉ Email</a></li>
-          <li><a href="https://github.com/yuanyueyao" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="PLACEHOLDER:SCHOLAR" target="_blank" rel="noopener">Google Scholar</a></li>
-          <li><a href="assets/cv.pdf" target="_blank" rel="noopener"><strong>CV (PDF)</strong></a></li>
-        </ul>
+    <header class="head">
+      <img class="head__photo" src="assets/avatar.svg" alt="Portrait of PLACEHOLDER:NAME_EN" />
+      <div class="head__text">
+        <h1 class="head__name">PLACEHOLDER:NAME_EN <span class="head__zh">PLACEHOLDER:NAME_ZH</span></h1>
+        <p class="head__line">Incoming M.S. in Computer Science, Zhejiang University</p>
+        <p class="head__line muted">Large language models · post-training &amp; RL for reasoning</p>
+        <nav class="links">
+          <a href="mailto:PLACEHOLDER:EMAIL">Email</a> ·
+          <a href="PLACEHOLDER:SCHOLAR">Google&nbsp;Scholar</a> ·
+          <a href="https://github.com/yuanyueyao">GitHub</a> ·
+          <a href="PLACEHOLDER:X">X</a> ·
+          <a href="assets/cv.pdf">CV</a>
+        </nav>
       </div>
     </header>
 
     <!-- ===================== ABOUT ===================== -->
-    <section id="about" class="section">
-      <h2 class="section__title">About</h2>
+    <section class="sec">
       <p>
-        I am an incoming M.S. student in Computer Science at
-        <strong>Zhejiang University</strong> (Sept 2026), advised by
-        <span class="ph">PLACEHOLDER:ADVISOR</span>. My research centers on the
-        <strong>post-training</strong> of large language models — particularly
-        <strong>reinforcement learning for reasoning</strong>. I am interested in
-        reward design, credit assignment, training stability (entropy dynamics),
-        and the full pre-training → SFT → RLHF pipeline.
+        I am an incoming M.S. student in Computer Science at <strong>Zhejiang University</strong>
+        (Sept&nbsp;2026), advised by <span class="ph">PLACEHOLDER:ADVISOR</span>. My research is on
+        the <strong>post-training</strong> of large language models — especially
+        <strong>reinforcement learning for reasoning</strong>: reward design, credit assignment,
+        training stability (entropy dynamics), and the pre-training&nbsp;→&nbsp;SFT&nbsp;→&nbsp;RLHF pipeline.
       </p>
       <p>
-        I have implemented a large language model from scratch — pre-training,
-        supervised fine-tuning, and RLHF — and run controlled RL experiments on
-        the <a href="https://github.com/volcengine/verl" target="_blank" rel="noopener">verl</a>
-        framework across multiple model scales. My near-term goal is to publish at
-        top-tier venues (EMNLP, AAAI, and beyond).
+        I have implemented an LLM from scratch (pre-training, SFT, RLHF) and run controlled RL
+        experiments on the <a href="https://github.com/volcengine/verl">verl</a> framework across
+        model scales. I aim to publish at top venues such as EMNLP and AAAI.
       </p>
     </section>
 
     <!-- ===================== NEWS ===================== -->
-    <section id="news" class="section">
-      <h2 class="section__title">News</h2>
+    <section class="sec">
+      <h2 class="sec__h">News</h2>
       <ul class="news">
-        <li><span class="news__date">Sep 2026</span> Starting my M.S. in Computer Science at Zhejiang University.</li>
-        <li><span class="news__date">2026</span> Submitted work to <strong>EMNLP 2026</strong> (under review).</li>
-        <li><span class="news__date">2026</span> Preparing <strong>DivGRPO</strong> for submission to AAAI.</li>
+        <li><span class="news__d">Sep 2026</span> Starting my M.S. in Computer Science at Zhejiang University.</li>
+        <li><span class="news__d">2026</span> Submitted work to <strong>EMNLP 2026</strong> (under review).</li>
+        <li><span class="news__d">2026</span> Preparing <strong>DivGRPO</strong> for submission to AAAI.</li>
       </ul>
     </section>
 
     <!-- ===================== PUBLICATIONS ===================== -->
-    <section id="publications" class="section">
-      <h2 class="section__title">Publications &amp; Preprints</h2>
-      <p class="muted small">Author order reflects real contribution; status marked honestly. <span class="ph">(*) corresponding / lead.</span></p>
+    <section class="sec">
+      <h2 class="sec__h">Publications &amp; Preprints</h2>
+      <p class="muted small">Authors listed in true contribution order; status marked honestly. <span class="ph">(∗ equal contribution.)</span></p>
 
-      <ol class="pubs">
-        <li class="pub">
-          <div class="pub__body">
-            <span class="pub__title ph">PLACEHOLDER:EMNLP_TITLE</span>
-            <div class="pub__authors ph">Authors, with your position</div>
-            <div class="pub__venue">Under review, <strong>EMNLP 2026</strong>.</div>
-          </div>
-        </li>
-        <li class="pub">
-          <div class="pub__body">
-            <span class="pub__title">DivGRPO: Divergence-Guided Asymmetric Credit Assignment for Reasoning RL</span>
-            <div class="pub__authors ph">Authors</div>
-            <div class="pub__venue"><em>In preparation</em>, targeting AAAI.</div>
-            <p class="pub__abstract">
-              GRPO broadcasts a trajectory's final-outcome reward to <em>all</em> tokens,
-              mis-crediting correct steps in incorrect trajectories and rewarding lucky
-              steps in correct ones — empirically linked to entropy instability on
-              distilled reasoning models. DivGRPO detects token-level divergence points
-              between correct/incorrect trajectories and applies an asymmetric,
-              multiplicative reweighting of the GRPO advantage in pure token space
-              (no extra model, hidden states, or logits).
-            </p>
-          </div>
-        </li>
-      </ol>
+      <div class="pub">
+        <div class="pub__t ph">PLACEHOLDER:EMNLP_TITLE</div>
+        <div class="pub__a"><span class="ph">PLACEHOLDER:AUTHORS (your position marked)</span></div>
+        <div class="pub__v"><em>Under review</em>, EMNLP 2026.</div>
+      </div>
+
+      <div class="pub">
+        <div class="pub__t">DivGRPO: Divergence-Guided Asymmetric Credit Assignment for Reasoning RL</div>
+        <div class="pub__a"><span class="me">PLACEHOLDER:NAME_EN</span>, <span class="ph">et al.</span></div>
+        <div class="pub__v"><em>In preparation</em>, targeting AAAI.</div>
+        <div class="pub__n">Detects token-level divergence points between correct/incorrect trajectories and applies an asymmetric, multiplicative reweighting of the GRPO advantage in pure token space — no extra model, hidden states, or logits.</div>
+      </div>
     </section>
 
     <!-- ===================== RESEARCH & PROJECTS ===================== -->
-    <section id="research" class="section">
-      <h2 class="section__title">Research &amp; Projects</h2>
+    <section class="sec">
+      <h2 class="sec__h">Research &amp; Projects</h2>
 
-      <article class="entry">
-        <div class="entry__head">
-          <h3 class="entry__title">Divergence-Guided RL for LLM Reasoning (DivGRPO) <span class="entry__role">— lead</span></h3>
-          <span class="entry__date">2025 – present</span>
-        </div>
-        <ul class="entry__points">
-          <li>Identified a core failure of GRPO: a trajectory's final-outcome reward is broadcast to <strong>all</strong> tokens, mis-crediting correct steps in incorrect trajectories and rewarding lucky steps in correct ones; empirically linked to entropy instability (collapse / explosion) on distilled reasoning models.</li>
-          <li>Proposed <strong>DivGRPO</strong>: detect token-level divergence points and apply an <strong>asymmetric, multiplicative</strong> reweighting of the GRPO advantage in pure token space — penalty peaks at the divergence point and decays exponentially; correct paths reinforced after divergence.</li>
-          <li>Implemented on <strong>verl</strong>; ran controlled, multi-seed experiments across <strong>DeepSeek-R1-Distill-Qwen-1.5B / 7B</strong> and <strong>Qwen3-4B</strong> on 8×A800.</li>
+      <div class="proj">
+        <div class="proj__head"><span class="proj__t">Divergence-Guided RL for LLM Reasoning (DivGRPO)</span><span class="proj__d">2025 – present · lead</span></div>
+        <ul class="proj__p">
+          <li>Identified a core failure of GRPO: a trajectory's final-outcome reward is broadcast to <strong>all</strong> tokens, mis-crediting correct steps in incorrect trajectories and rewarding lucky steps in correct ones — empirically linked to entropy instability (collapse / explosion) on distilled reasoning models.</li>
+          <li>Proposed <strong>DivGRPO</strong>: an asymmetric, multiplicative reweighting of the GRPO advantage at token-level divergence points — penalty peaks at the divergence point and decays exponentially; correct paths reinforced afterward.</li>
+          <li>Implemented on <strong>verl</strong>; controlled multi-seed experiments across <strong>DeepSeek-R1-Distill-Qwen-1.5B / 7B</strong> and <strong>Qwen3-4B</strong> on 8×A800.</li>
           <li><strong>Result:</strong> stable low-entropy convergence where GRPO is unstable — at 1.5B preserves AIME24 acc@12 ≈ 0.23 (vs. GRPO ≈ 0.16 under entropy explosion); at 7B holds macro accuracy ≈ 0.53 throughout, avoiding GRPO's late-stage degradation.</li>
         </ul>
-      </article>
+      </div>
 
-      <article class="entry">
-        <div class="entry__head">
-          <h3 class="entry__title">LLM from scratch: pre-training → SFT → RLHF</h3>
-          <span class="entry__date"><a class="ph" href="#">code</a></span>
-        </div>
-        <ul class="entry__points">
-          <li>Implemented Transformer, tokenizer, and the full training pipeline from zero; pre-trained, then SFT and PPO/GRPO-based alignment — building end-to-end intuition for reward design, KL control, and entropy monitoring.</li>
+      <div class="proj">
+        <div class="proj__head"><span class="proj__t">LLM from scratch: pre-training → SFT → RLHF</span><span class="proj__d"><a class="ph" href="#">code</a></span></div>
+        <ul class="proj__p">
+          <li>Implemented Transformer, tokenizer, and the full pipeline from zero; pre-training, SFT, and PPO/GRPO alignment — end-to-end intuition for reward design, KL control, and entropy monitoring.</li>
         </ul>
-      </article>
+      </div>
 
-      <article class="entry">
-        <div class="entry__head">
-          <h3 class="entry__title">Reproducible RL training &amp; evaluation infrastructure (verl)</h3>
-          <span class="entry__date"></span>
-        </div>
-        <ul class="entry__points">
-          <li>Built a training-to-evaluation pipeline (run directories, logging, artifact archival, auto-resume) for multi-GPU GRPO/DivGRPO experiments, plus a unified math-answer verifier (<code>math_verify</code> over <code>\boxed{}</code> with equivalence checking) for consistent benchmarking.</li>
+      <div class="proj">
+        <div class="proj__head"><span class="proj__t">Reproducible RL training &amp; evaluation infrastructure (verl)</span></div>
+        <ul class="proj__p">
+          <li>Built a training-to-evaluation pipeline (run directories, logging, artifact archival, auto-resume) for multi-GPU GRPO/DivGRPO experiments, plus a unified math-answer verifier (<code>math_verify</code> over <code>\boxed{}</code> with equivalence checking).</li>
         </ul>
-      </article>
+      </div>
     </section>
 
     <!-- ===================== EDUCATION ===================== -->
-    <section id="education" class="section">
-      <h2 class="section__title">Education</h2>
-      <article class="entry">
-        <div class="entry__head">
-          <h3 class="entry__title">Zhejiang University <span class="muted">— College of Computer Science and Technology</span></h3>
-          <span class="entry__date">Sep 2026 – Jun 2029 (expected)</span>
-        </div>
-        <p class="entry__sub">M.S. in Computer Science and Technology · Advisor: <span class="ph">PLACEHOLDER:ADVISOR</span></p>
-      </article>
-      <article class="entry">
-        <div class="entry__head">
-          <h3 class="entry__title ph">PLACEHOLDER:UNDERGRAD (undergraduate institution)</h3>
-          <span class="entry__date ph">20XX – 2026</span>
-        </div>
-        <p class="entry__sub ph">B.S. in [Major] · GPA [X.XX / 4.0], Rank [X / XX]</p>
-      </article>
+    <section class="sec">
+      <h2 class="sec__h">Education</h2>
+      <div class="proj">
+        <div class="proj__head"><span class="proj__t">Zhejiang University — College of Computer Science and Technology</span><span class="proj__d">Sep 2026 – Jun 2029 (expected)</span></div>
+        <p class="proj__s">M.S. in Computer Science and Technology · Advisor: <span class="ph">PLACEHOLDER:ADVISOR</span></p>
+      </div>
+      <div class="proj">
+        <div class="proj__head"><span class="proj__t ph">PLACEHOLDER:UNDERGRAD (undergraduate institution)</span><span class="proj__d ph">20XX – 2026</span></div>
+        <p class="proj__s ph">B.S. in [Major] · GPA [X.XX / 4.0], Rank [X / XX]</p>
+      </div>
     </section>
 
     <!-- ===================== SKILLS ===================== -->
-    <section id="skills" class="section">
-      <h2 class="section__title">Technical Skills</h2>
+    <section class="sec">
+      <h2 class="sec__h">Technical Skills</h2>
       <ul class="skills">
         <li><strong>Languages:</strong> Python (proficient)<span class="ph">, C++ / Java (optional)</span></li>
-        <li><strong>Machine Learning:</strong> PyTorch; LLM pre-training / SFT / RLHF (PPO, GRPO); verl; distributed training (FSDP); CUDA setup</li>
+        <li><strong>Machine Learning:</strong> PyTorch; LLM pre-training / SFT / RLHF (PPO, GRPO); verl; distributed training (FSDP); CUDA</li>
         <li><strong>Infrastructure:</strong> Linux, tmux, Git; vLLM / SGLang inference</li>
         <li><strong>Spoken:</strong> Chinese (native), English (academic reading &amp; writing)</li>
       </ul>
     </section>
 
     <!-- ===================== HONORS ===================== -->
-    <section id="honors" class="section">
-      <h2 class="section__title">Honors &amp; Awards</h2>
-      <ul class="honors">
+    <section class="sec">
+      <h2 class="sec__h">Honors &amp; Awards</h2>
+      <ul class="skills">
         <li class="ph">PLACEHOLDER:HONORS — scholarship / competition / national-level award (year and rank)</li>
         <li class="ph">…</li>
       </ul>
     </section>
 
+    <footer class="foot">
+      <p>© <span id="year"></span> PLACEHOLDER:NAME_EN · built with plain HTML &amp; CSS · hosted on GitHub Pages</p>
+    </footer>
+
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="footer">
-    <p>© <span id="year"></span> PLACEHOLDER:NAME_EN. Built with plain HTML &amp; CSS. Hosted on GitHub Pages.</p>
-  </footer>
-
   <script>
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Theme toggle (persisted)
     (function () {
-      const root = document.documentElement;
-      const btn = document.getElementById('themeToggle');
+      const root = document.documentElement, btn = document.getElementById('themeToggle');
       const saved = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const initial = saved || (prefersDark ? 'dark' : 'light');
+      const initial = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       root.setAttribute('data-theme', initial);
-      btn.textContent = initial === 'dark' ? '☀️' : '🌙';
+      btn.textContent = initial === 'dark' ? '☀' : '☾';
       btn.addEventListener('click', function () {
         const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', next);
-        btn.textContent = next === 'dark' ? '☀️' : '🌙';
+        btn.textContent = next === 'dark' ? '☀' : '☾';
         localStorage.setItem('theme', next);
       });
     })();

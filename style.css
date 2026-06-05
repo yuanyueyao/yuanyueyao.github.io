@@ -1,171 +1,131 @@
 /* ============================================================
-   Academic homepage — clean, navy-accented, responsive.
-   Light + dark theme via [data-theme] on <html>.
+   Academic homepage — imitates the dominant top-conference style:
+   single column ~720px, white bg, black sans-serif text, blue links.
+   (See STYLE_RESEARCH.md — survey of 30 researchers' homepages.)
+   Light is the canonical default; a subtle dark theme is available.
    ============================================================ */
 
 :root {
-  --accent: #1F3A5F;          /* deep navy (matches the CV) */
-  --accent-soft: #2f5688;
   --bg: #ffffff;
-  --bg-alt: #f6f7f9;
-  --text: #1c2024;
-  --muted: #5b6470;
-  --rule: #e3e6ea;
-  --link: #1F3A5F;
-  --ph: #b14b3a;              /* placeholder highlight (visible, easy to spot) */
-  --maxw: 760px;
-  --serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
-  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --text: #1a1a1a;
+  --muted: #6a6a6a;
+  --link: #1772d0;          /* classic academic blue */
+  --link-hover: #0d4f96;
+  --rule: #e6e6e6;
+  --me: #1a1a1a;            /* own-name emphasis in author lists */
+  --ph: #9a9a9a;            /* placeholder: muted, not garish */
+  --maxw: 720px;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 [data-theme="dark"] {
-  --accent: #7ea8df;
-  --accent-soft: #9cc0ee;
-  --bg: #14171c;
-  --bg-alt: #1b1f26;
-  --text: #e7eaef;
-  --muted: #97a1ad;
-  --rule: #2a2f38;
-  --link: #9cc0ee;
-  --ph: #e0876f;
+  --bg: #15171a;
+  --text: #e4e6e9;
+  --muted: #9aa0a8;
+  --link: #6ea8e6;
+  --link-hover: #97c2f0;
+  --rule: #2a2e34;
+  --me: #f0f2f4;
+  --ph: #777d85;
 }
 
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--serif);
-  font-size: 18px;
-  line-height: 1.6;
+  font-family: var(--sans);
+  font-size: 16.5px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 a { color: var(--link); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
 
-.container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 64px; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 52px 22px 60px; }
 
 .muted { color: var(--muted); }
-.small { font-size: 0.85em; }
+.small { font-size: 0.86em; }
 
-/* placeholder marker — obvious until replaced */
-.ph { color: var(--ph); }
+/* placeholder marker — visible but tasteful (dotted underline) */
+.ph { color: var(--ph); border-bottom: 1px dotted var(--ph); }
 
-/* ---------------- NAV ---------------- */
-.nav {
-  position: sticky; top: 0; z-index: 10;
-  display: flex; align-items: center; justify-content: space-between;
-  max-width: var(--maxw); margin: 0 auto; padding: 12px 24px;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: saturate(180%) blur(8px);
-  border-bottom: 1px solid var(--rule);
-}
-.nav__brand { font-family: var(--sans); font-weight: 700; color: var(--text); }
-.nav__links { display: flex; align-items: center; gap: 18px; font-family: var(--sans); font-size: 0.82rem; }
-.nav__links a { color: var(--muted); }
-.nav__links a:hover { color: var(--accent); text-decoration: none; }
-
+/* ---------------- THEME TOGGLE (top-right, unobtrusive) ---------------- */
 .theme-toggle {
-  border: 1px solid var(--rule); background: var(--bg-alt); color: var(--text);
-  border-radius: 8px; width: 34px; height: 30px; cursor: pointer; font-size: 0.95rem;
-  line-height: 1; display: inline-flex; align-items: center; justify-content: center;
+  position: fixed; top: 14px; right: 16px; z-index: 10;
+  width: 32px; height: 30px; cursor: pointer;
+  border: 1px solid var(--rule); border-radius: 7px;
+  background: var(--bg); color: var(--text);
+  font-size: 0.9rem; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
 }
-.theme-toggle:hover { border-color: var(--accent); }
+.theme-toggle:hover { border-color: var(--link); }
 
-/* ---------------- HERO ---------------- */
-.hero {
-  display: flex; gap: 28px; align-items: center;
-  padding: 44px 0 8px; flex-wrap: wrap;
+/* ---------------- HEADER ---------------- */
+.head { display: flex; gap: 26px; align-items: center; margin-bottom: 30px; flex-wrap: wrap; }
+.head__photo {
+  width: 138px; height: 138px; border-radius: 8px; object-fit: cover;
+  border: 1px solid var(--rule); flex: 0 0 auto;
 }
-.hero__avatar {
-  width: 132px; height: 132px; border-radius: 16px; object-fit: cover;
-  border: 1px solid var(--rule); background: var(--bg-alt); flex: 0 0 auto;
-}
-.hero__intro { flex: 1 1 320px; min-width: 280px; }
-.hero__name {
-  font-family: var(--sans); font-weight: 800; font-size: 2rem;
-  margin: 0 0 4px; letter-spacing: -0.01em; color: var(--text);
-}
-.hero__name-zh { font-weight: 600; font-size: 1.2rem; color: var(--muted); margin-left: 8px; }
-.hero__title { margin: 0 0 10px; font-size: 1.05rem; }
-.hero__title strong { color: var(--accent); }
-.hero__tagline { margin: 0 0 14px; color: var(--text); }
-.hero__links {
-  list-style: none; display: flex; flex-wrap: wrap; gap: 8px 10px;
-  padding: 0; margin: 0; font-family: var(--sans); font-size: 0.9rem;
-}
-.hero__links li a {
-  display: inline-block; padding: 5px 12px; border: 1px solid var(--rule);
-  border-radius: 999px; color: var(--text); background: var(--bg-alt);
-}
-.hero__links li a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.head__text { flex: 1 1 300px; min-width: 260px; }
+.head__name { font-size: 1.95rem; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.01em; }
+.head__zh { font-size: 1.15rem; font-weight: 600; color: var(--muted); margin-left: 6px; }
+.head__line { margin: 0 0 3px; font-size: 1.02rem; }
+.links { margin-top: 12px; font-size: 0.96rem; color: var(--muted); }
+.links a { white-space: nowrap; }
 
 /* ---------------- SECTIONS ---------------- */
-.section { padding: 26px 0 4px; scroll-margin-top: 60px; }
-.section__title {
-  font-family: var(--sans); font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.06em; font-size: 0.92rem; color: var(--accent);
-  margin: 0 0 14px; padding-bottom: 6px; border-bottom: 1.5px solid var(--rule);
+.sec { margin: 0 0 26px; }
+.sec__h {
+  font-size: 1.18rem; font-weight: 700; margin: 0 0 12px;
+  padding-bottom: 5px; border-bottom: 1px solid var(--rule);
 }
-.section p { margin: 0 0 12px; }
+.sec p { margin: 0 0 11px; }
 
 /* ---------------- NEWS ---------------- */
 .news { list-style: none; padding: 0; margin: 0; }
-.news li { padding: 5px 0; border-bottom: 1px dashed var(--rule); }
-.news li:last-child { border-bottom: none; }
-.news__date {
-  display: inline-block; min-width: 84px; font-family: var(--sans);
-  font-size: 0.78rem; font-weight: 600; color: var(--muted);
-}
+.news li { padding: 3px 0; }
+.news__d { display: inline-block; min-width: 78px; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.92em; }
 
 /* ---------------- PUBLICATIONS ---------------- */
-.pubs { list-style: decimal; padding-left: 1.4em; margin: 8px 0 0; }
-.pub { margin-bottom: 16px; padding-left: 4px; }
-.pub__title { font-weight: 700; }
-.pub__authors { font-size: 0.92rem; color: var(--muted); margin-top: 2px; }
-.pub__venue { font-size: 0.92rem; margin-top: 2px; }
-.pub__abstract {
-  font-size: 0.9rem; color: var(--muted); margin: 8px 0 0;
-  padding-left: 12px; border-left: 2px solid var(--rule);
-}
+.pub { margin: 0 0 16px; }
+.pub__t { font-weight: 700; }
+.pub__a { font-size: 0.95rem; margin-top: 1px; }
+.pub__a .me { color: var(--me); font-weight: 600; }
+.pub__v { font-size: 0.95rem; color: var(--muted); margin-top: 1px; }
+.pub__n { font-size: 0.9rem; color: var(--muted); margin-top: 5px; }
 
-/* ---------------- ENTRIES (research / education) ---------------- */
-.entry { margin-bottom: 18px; }
-.entry__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
-.entry__title { font-family: var(--sans); font-weight: 700; font-size: 1.02rem; margin: 0; }
-.entry__role { font-weight: 500; color: var(--muted); font-style: italic; }
-.entry__date { font-family: var(--sans); font-size: 0.82rem; color: var(--muted); white-space: nowrap; }
-.entry__sub { font-size: 0.92rem; color: var(--muted); margin: 2px 0 0; }
-.entry__points { margin: 8px 0 0; padding-left: 1.2em; }
-.entry__points li { margin-bottom: 5px; }
+/* ---------------- PROJECTS / EDUCATION ENTRIES ---------------- */
+.proj { margin: 0 0 16px; }
+.proj__head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.proj__t { font-weight: 650; }
+.proj__d { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
+.proj__s { font-size: 0.93rem; color: var(--muted); margin: 2px 0 0; }
+.proj__p { margin: 6px 0 0; padding-left: 1.15em; }
+.proj__p li { margin-bottom: 4px; }
 
 /* ---------------- SKILLS / HONORS ---------------- */
-.skills, .honors { margin: 0; padding-left: 1.2em; }
-.skills li, .honors li { margin-bottom: 5px; }
+.skills { margin: 0; padding-left: 1.15em; }
+.skills li { margin-bottom: 4px; }
 
 code {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  font-size: 0.88em; background: var(--bg-alt); padding: 1px 5px; border-radius: 4px;
+  font-size: 0.86em; background: rgba(127,127,127,0.12); padding: 1px 5px; border-radius: 4px;
 }
 
 /* ---------------- FOOTER ---------------- */
-.footer {
-  border-top: 1px solid var(--rule); margin-top: 40px;
-  text-align: center; color: var(--muted); font-family: var(--sans);
-  font-size: 0.8rem; padding: 22px 24px;
-}
+.foot { border-top: 1px solid var(--rule); margin-top: 36px; padding-top: 18px; color: var(--muted); font-size: 0.82rem; }
+.foot p { margin: 0; }
 
 /* ---------------- RESPONSIVE ---------------- */
-@media (max-width: 560px) {
-  body { font-size: 17px; }
-  .nav__links { gap: 12px; }
-  .nav__links a:not(.theme-toggle) { display: none; }   /* keep nav clean on phones */
-  .hero { gap: 20px; padding-top: 32px; }
-  .hero__avatar { width: 104px; height: 104px; }
-  .hero__name { font-size: 1.6rem; }
+@media (max-width: 540px) {
+  .wrap { padding-top: 40px; }
+  .head { gap: 18px; }
+  .head__photo { width: 104px; height: 104px; }
+  .head__name { font-size: 1.62rem; }
+  .proj__head { gap: 4px; }
 }
