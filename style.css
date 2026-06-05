@@ -1,0 +1,171 @@
+/* ============================================================
+   Academic homepage — clean, navy-accented, responsive.
+   Light + dark theme via [data-theme] on <html>.
+   ============================================================ */
+
+:root {
+  --accent: #1F3A5F;          /* deep navy (matches the CV) */
+  --accent-soft: #2f5688;
+  --bg: #ffffff;
+  --bg-alt: #f6f7f9;
+  --text: #1c2024;
+  --muted: #5b6470;
+  --rule: #e3e6ea;
+  --link: #1F3A5F;
+  --ph: #b14b3a;              /* placeholder highlight (visible, easy to spot) */
+  --maxw: 760px;
+  --serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+  --accent: #7ea8df;
+  --accent-soft: #9cc0ee;
+  --bg: #14171c;
+  --bg-alt: #1b1f26;
+  --text: #e7eaef;
+  --muted: #97a1ad;
+  --rule: #2a2f38;
+  --link: #9cc0ee;
+  --ph: #e0876f;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 64px; }
+
+.muted { color: var(--muted); }
+.small { font-size: 0.85em; }
+
+/* placeholder marker — obvious until replaced */
+.ph { color: var(--ph); }
+
+/* ---------------- NAV ---------------- */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: var(--maxw); margin: 0 auto; padding: 12px 24px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav__brand { font-family: var(--sans); font-weight: 700; color: var(--text); }
+.nav__links { display: flex; align-items: center; gap: 18px; font-family: var(--sans); font-size: 0.82rem; }
+.nav__links a { color: var(--muted); }
+.nav__links a:hover { color: var(--accent); text-decoration: none; }
+
+.theme-toggle {
+  border: 1px solid var(--rule); background: var(--bg-alt); color: var(--text);
+  border-radius: 8px; width: 34px; height: 30px; cursor: pointer; font-size: 0.95rem;
+  line-height: 1; display: inline-flex; align-items: center; justify-content: center;
+}
+.theme-toggle:hover { border-color: var(--accent); }
+
+/* ---------------- HERO ---------------- */
+.hero {
+  display: flex; gap: 28px; align-items: center;
+  padding: 44px 0 8px; flex-wrap: wrap;
+}
+.hero__avatar {
+  width: 132px; height: 132px; border-radius: 16px; object-fit: cover;
+  border: 1px solid var(--rule); background: var(--bg-alt); flex: 0 0 auto;
+}
+.hero__intro { flex: 1 1 320px; min-width: 280px; }
+.hero__name {
+  font-family: var(--sans); font-weight: 800; font-size: 2rem;
+  margin: 0 0 4px; letter-spacing: -0.01em; color: var(--text);
+}
+.hero__name-zh { font-weight: 600; font-size: 1.2rem; color: var(--muted); margin-left: 8px; }
+.hero__title { margin: 0 0 10px; font-size: 1.05rem; }
+.hero__title strong { color: var(--accent); }
+.hero__tagline { margin: 0 0 14px; color: var(--text); }
+.hero__links {
+  list-style: none; display: flex; flex-wrap: wrap; gap: 8px 10px;
+  padding: 0; margin: 0; font-family: var(--sans); font-size: 0.9rem;
+}
+.hero__links li a {
+  display: inline-block; padding: 5px 12px; border: 1px solid var(--rule);
+  border-radius: 999px; color: var(--text); background: var(--bg-alt);
+}
+.hero__links li a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+/* ---------------- SECTIONS ---------------- */
+.section { padding: 26px 0 4px; scroll-margin-top: 60px; }
+.section__title {
+  font-family: var(--sans); font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; font-size: 0.92rem; color: var(--accent);
+  margin: 0 0 14px; padding-bottom: 6px; border-bottom: 1.5px solid var(--rule);
+}
+.section p { margin: 0 0 12px; }
+
+/* ---------------- NEWS ---------------- */
+.news { list-style: none; padding: 0; margin: 0; }
+.news li { padding: 5px 0; border-bottom: 1px dashed var(--rule); }
+.news li:last-child { border-bottom: none; }
+.news__date {
+  display: inline-block; min-width: 84px; font-family: var(--sans);
+  font-size: 0.78rem; font-weight: 600; color: var(--muted);
+}
+
+/* ---------------- PUBLICATIONS ---------------- */
+.pubs { list-style: decimal; padding-left: 1.4em; margin: 8px 0 0; }
+.pub { margin-bottom: 16px; padding-left: 4px; }
+.pub__title { font-weight: 700; }
+.pub__authors { font-size: 0.92rem; color: var(--muted); margin-top: 2px; }
+.pub__venue { font-size: 0.92rem; margin-top: 2px; }
+.pub__abstract {
+  font-size: 0.9rem; color: var(--muted); margin: 8px 0 0;
+  padding-left: 12px; border-left: 2px solid var(--rule);
+}
+
+/* ---------------- ENTRIES (research / education) ---------------- */
+.entry { margin-bottom: 18px; }
+.entry__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.entry__title { font-family: var(--sans); font-weight: 700; font-size: 1.02rem; margin: 0; }
+.entry__role { font-weight: 500; color: var(--muted); font-style: italic; }
+.entry__date { font-family: var(--sans); font-size: 0.82rem; color: var(--muted); white-space: nowrap; }
+.entry__sub { font-size: 0.92rem; color: var(--muted); margin: 2px 0 0; }
+.entry__points { margin: 8px 0 0; padding-left: 1.2em; }
+.entry__points li { margin-bottom: 5px; }
+
+/* ---------------- SKILLS / HONORS ---------------- */
+.skills, .honors { margin: 0; padding-left: 1.2em; }
+.skills li, .honors li { margin-bottom: 5px; }
+
+code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.88em; background: var(--bg-alt); padding: 1px 5px; border-radius: 4px;
+}
+
+/* ---------------- FOOTER ---------------- */
+.footer {
+  border-top: 1px solid var(--rule); margin-top: 40px;
+  text-align: center; color: var(--muted); font-family: var(--sans);
+  font-size: 0.8rem; padding: 22px 24px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  .nav__links { gap: 12px; }
+  .nav__links a:not(.theme-toggle) { display: none; }   /* keep nav clean on phones */
+  .hero { gap: 20px; padding-top: 32px; }
+  .hero__avatar { width: 104px; height: 104px; }
+  .hero__name { font-size: 1.6rem; }
+}

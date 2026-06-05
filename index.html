@@ -1,442 +1,236 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<!--
+  ============================================================================
+  PERSONAL PLACEHOLDERS TO REPLACE (search for "PLACEHOLDER:"):
+    - PLACEHOLDER:NAME_EN      your English name
+    - PLACEHOLDER:NAME_ZH      your Chinese name
+    - yuanyueyao       your GitHub username (also your site URL)
+    - PLACEHOLDER:EMAIL        contact email
+    - PLACEHOLDER:SCHOLAR      Google Scholar URL (or remove the link)
+    - PLACEHOLDER:ORCID        ORCID URL (or remove)
+    - PLACEHOLDER:ADVISOR      ZJU advisor name
+    - PLACEHOLDER:UNDERGRAD    undergraduate school / major / years / GPA
+    - PLACEHOLDER:EMNLP_TITLE  EMNLP 2026 paper title + authors
+    - PLACEHOLDER:HONORS       honors / awards
+    - assets/avatar.jpg        replace with your real photo (or keep the SVG)
+  ============================================================================
+-->
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Yyy&#39;s blogs">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Yyy&#39;s blogs">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-  
-  <title>Yyy&#39;s blogs</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
-    }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
-
-
-  
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PLACEHOLDER:NAME_EN — Academic Homepage</title>
+  <meta name="description" content="Academic homepage of PLACEHOLDER:NAME_EN — M.S. in Computer Science at Zhejiang University. Research on large language models, post-training, and reinforcement learning for reasoning." />
+  <meta name="author" content="PLACEHOLDER:NAME_EN" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PLACEHOLDER:NAME_EN — Academic Homepage" />
+  <meta property="og:description" content="LLM post-training & reinforcement learning for reasoning. M.S. CS, Zhejiang University." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-  
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav">
+    <a class="nav__brand" href="#top">PLACEHOLDER:NAME_EN</a>
+    <div class="nav__links">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">🌙</button>
+    </div>
+  </nav>
 
-  <header>
-    
+  <main id="top" class="container">
 
-<div class="header-inner" style="height: 100vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Yyy的博客</strong>
-    </a>
+    <!-- ===================== HEADER ===================== -->
+    <header class="hero">
+      <img class="hero__avatar" src="assets/avatar.svg" alt="Portrait of PLACEHOLDER:NAME_EN" />
+      <div class="hero__intro">
+        <h1 class="hero__name">PLACEHOLDER:NAME_EN <span class="hero__name-zh">PLACEHOLDER:NAME_ZH</span></h1>
+        <p class="hero__title">M.S. in Computer Science, <strong>Zhejiang University</strong> <span class="muted">· incoming Sept 2026</span></p>
+        <p class="hero__tagline">
+          I work on <strong>large language models</strong> — post-training and
+          <strong>reinforcement learning for reasoning</strong>: reward design,
+          credit assignment, and training stability.
+        </p>
+        <ul class="hero__links">
+          <li><a href="mailto:PLACEHOLDER:EMAIL">✉ Email</a></li>
+          <li><a href="https://github.com/yuanyueyao" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="PLACEHOLDER:SCHOLAR" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><a href="assets/cv.pdf" target="_blank" rel="noopener"><strong>CV (PDF)</strong></a></li>
+        </ul>
+      </div>
+    </header>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section">
+      <h2 class="section__title">About</h2>
+      <p>
+        I am an incoming M.S. student in Computer Science at
+        <strong>Zhejiang University</strong> (Sept 2026), advised by
+        <span class="ph">PLACEHOLDER:ADVISOR</span>. My research centers on the
+        <strong>post-training</strong> of large language models — particularly
+        <strong>reinforcement learning for reasoning</strong>. I am interested in
+        reward design, credit assignment, training stability (entropy dynamics),
+        and the full pre-training → SFT → RLHF pipeline.
+      </p>
+      <p>
+        I have implemented a large language model from scratch — pre-training,
+        supervised fine-tuning, and RLHF — and run controlled RL experiments on
+        the <a href="https://github.com/volcengine/verl" target="_blank" rel="noopener">verl</a>
+        framework across multiple model scales. My near-term goal is to publish at
+        top-tier venues (EMNLP, AAAI, and beyond).
+      </p>
+    </section>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
-                <i class="iconfont icon-home-fill"></i>
-                <span>首页</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>归档</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
-                <i class="iconfont icon-category-fill"></i>
-                <span>分类</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>标签</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
-                <i class="iconfont icon-user-fill"></i>
-                <span>关于</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
+    <!-- ===================== NEWS ===================== -->
+    <section id="news" class="section">
+      <h2 class="section__title">News</h2>
+      <ul class="news">
+        <li><span class="news__date">Sep 2026</span> Starting my M.S. in Computer Science at Zhejiang University.</li>
+        <li><span class="news__date">2026</span> Submitted work to <strong>EMNLP 2026</strong> (under review).</li>
+        <li><span class="news__date">2026</span> Preparing <strong>DivGRPO</strong> for submission to AAAI.</li>
       </ul>
-    </div>
-  </div>
-</nav>
+    </section>
 
-  
+    <!-- ===================== PUBLICATIONS ===================== -->
+    <section id="publications" class="section">
+      <h2 class="section__title">Publications &amp; Preprints</h2>
+      <p class="muted small">Author order reflects real contribution; status marked honestly. <span class="ph">(*) corresponding / lead.</span></p>
 
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="👋欢迎来到我的博客"></span>
-          
-        </div>
-
-        
-      </div>
-
-      
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-x-md">
-        <div id="board"
-          style="margin-top: 0">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2025/03/16/stl%E6%80%BB%E7%BB%93/" target="_self">
-          stl总结
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/16/stl%E6%80%BB%E7%BB%93/" target="_self">
-        <div>
-          机试技巧与STLvs2018 快捷键1234567891011121314151617CTRL + J                  列出成员 Ctrl+E,D                  格式化全部代码 Ctrl+K,F                  格式化选中的代码 CTRL + SHIFT + E          显示资源视图 F12
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-03-16 16:48" pubdate>
-              2025-03-16
-            </time>
+      <ol class="pubs">
+        <li class="pub">
+          <div class="pub__body">
+            <span class="pub__title ph">PLACEHOLDER:EMNLP_TITLE</span>
+            <div class="pub__authors ph">Authors, with your position</div>
+            <div class="pub__venue">Under review, <strong>EMNLP 2026</strong>.</div>
           </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2025/03/13/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84false-sharing/" target="_self">
-          并行计算中的false sharing
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/13/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84false-sharing/" target="_self">
-        <div>
-          本篇主要讨论了 “False Sharing”（伪共享） 这个导致并行计算扩展性差的性能问题。  1. 什么是 False Sharing？ 现代 CPU 使用 缓存行（Cache Line） 作为数据传输的最小单位，通常是  64 字节 。 当不同的线程操作 独立的变量 ，但这些变量恰好落在同一个缓存行时，就会发生 False Sharing。 每当一个线程更新它的变量，整个缓存行都会被标记为无
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-03-13 20:30" pubdate>
-              2025-03-13
-            </time>
+        </li>
+        <li class="pub">
+          <div class="pub__body">
+            <span class="pub__title">DivGRPO: Divergence-Guided Asymmetric Credit Assignment for Reasoning RL</span>
+            <div class="pub__authors ph">Authors</div>
+            <div class="pub__venue"><em>In preparation</em>, targeting AAAI.</div>
+            <p class="pub__abstract">
+              GRPO broadcasts a trajectory's final-outcome reward to <em>all</em> tokens,
+              mis-crediting correct steps in incorrect trajectories and rewarding lucky
+              steps in correct ones — empirically linked to entropy instability on
+              distilled reasoning models. DivGRPO detects token-level divergence points
+              between correct/incorrect trajectories and applies an asymmetric,
+              multiplicative reweighting of the GRPO advantage in pure token space
+              (no extra model, hidden states, or logits).
+            </p>
           </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
+        </li>
+      </ol>
+    </section>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2025/03/12/hexo-github-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/" target="_self">
-          hexo + github 个人博客部署
-        </a>
-      </h2>
+    <!-- ===================== RESEARCH & PROJECTS ===================== -->
+    <section id="research" class="section">
+      <h2 class="section__title">Research &amp; Projects</h2>
 
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2025/03/12/hexo-github-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/" target="_self">
-        <div>
-          一个详细、完善的 Hexo 博客部署教程，不仅涵盖了基本的安装、配置、生成与部署步骤，还增加了常见问题的解决、主题设置和使用 SSH 方式部署的补充说明。  一、安装 Hexo、Node.js 和 Git 部署插件1.1 安装 Node.js确保你的系统已经安装 Node.js（建议使用 LTS 版本），可以从 Node.js 官网 下载并安装。 1.2 全局安装 Hexo CLI使用 npm 安
+      <article class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title">Divergence-Guided RL for LLM Reasoning (DivGRPO) <span class="entry__role">— lead</span></h3>
+          <span class="entry__date">2025 – present</span>
         </div>
-      </a>
+        <ul class="entry__points">
+          <li>Identified a core failure of GRPO: a trajectory's final-outcome reward is broadcast to <strong>all</strong> tokens, mis-crediting correct steps in incorrect trajectories and rewarding lucky steps in correct ones; empirically linked to entropy instability (collapse / explosion) on distilled reasoning models.</li>
+          <li>Proposed <strong>DivGRPO</strong>: detect token-level divergence points and apply an <strong>asymmetric, multiplicative</strong> reweighting of the GRPO advantage in pure token space — penalty peaks at the divergence point and decays exponentially; correct paths reinforced after divergence.</li>
+          <li>Implemented on <strong>verl</strong>; ran controlled, multi-seed experiments across <strong>DeepSeek-R1-Distill-Qwen-1.5B / 7B</strong> and <strong>Qwen3-4B</strong> on 8×A800.</li>
+          <li><strong>Result:</strong> stable low-entropy convergence where GRPO is unstable — at 1.5B preserves AIME24 acc@12 ≈ 0.23 (vs. GRPO ≈ 0.16 under entropy explosion); at 7B holds macro accuracy ≈ 0.53 throughout, avoiding GRPO's late-stage degradation.</li>
+        </ul>
+      </article>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2025-03-12 19:44" pubdate>
-              2025-03-12
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-
-
-
-
-              </div>
-            </div>
-          </div>
+      <article class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title">LLM from scratch: pre-training → SFT → RLHF</h3>
+          <span class="entry__date"><a class="ph" href="#">code</a></span>
         </div>
-      </div>
-    
+        <ul class="entry__points">
+          <li>Implemented Transformer, tokenizer, and the full training pipeline from zero; pre-trained, then SFT and PPO/GRPO-based alignment — building end-to-end intuition for reward design, KL control, and entropy monitoring.</li>
+        </ul>
+      </article>
 
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+      <article class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title">Reproducible RL training &amp; evaluation infrastructure (verl)</h3>
+          <span class="entry__date"></span>
         </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
+        <ul class="entry__points">
+          <li>Built a training-to-evaluation pipeline (run directories, logging, artifact archival, auto-resume) for multi-GPU GRPO/DivGRPO experiments, plus a unified math-answer verifier (<code>math_verify</code> over <code>\boxed{}</code> with equivalence checking) for consistent benchmarking.</li>
+        </ul>
+      </article>
+    </section>
 
-    
+    <!-- ===================== EDUCATION ===================== -->
+    <section id="education" class="section">
+      <h2 class="section__title">Education</h2>
+      <article class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title">Zhejiang University <span class="muted">— College of Computer Science and Technology</span></h3>
+          <span class="entry__date">Sep 2026 – Jun 2029 (expected)</span>
+        </div>
+        <p class="entry__sub">M.S. in Computer Science and Technology · Advisor: <span class="ph">PLACEHOLDER:ADVISOR</span></p>
+      </article>
+      <article class="entry">
+        <div class="entry__head">
+          <h3 class="entry__title ph">PLACEHOLDER:UNDERGRAD (undergraduate institution)</h3>
+          <span class="entry__date ph">20XX – 2026</span>
+        </div>
+        <p class="entry__sub ph">B.S. in [Major] · GPA [X.XX / 4.0], Rank [X / XX]</p>
+      </article>
+    </section>
 
-    
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" class="section">
+      <h2 class="section__title">Technical Skills</h2>
+      <ul class="skills">
+        <li><strong>Languages:</strong> Python (proficient)<span class="ph">, C++ / Java (optional)</span></li>
+        <li><strong>Machine Learning:</strong> PyTorch; LLM pre-training / SFT / RLHF (PPO, GRPO); verl; distributed training (FSDP); CUDA setup</li>
+        <li><strong>Infrastructure:</strong> Linux, tmux, Git; vLLM / SGLang inference</li>
+        <li><strong>Spoken:</strong> Chinese (native), English (academic reading &amp; writing)</li>
+      </ul>
+    </section>
+
+    <!-- ===================== HONORS ===================== -->
+    <section id="honors" class="section">
+      <h2 class="section__title">Honors &amp; Awards</h2>
+      <ul class="honors">
+        <li class="ph">PLACEHOLDER:HONORS — scholarship / competition / national-level award (year and rank)</li>
+        <li class="ph">…</li>
+      </ul>
+    </section>
+
   </main>
 
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-</div>
-
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <p>© <span id="year"></span> PLACEHOLDER:NAME_EN. Built with plain HTML &amp; CSS. Hosted on GitHub Pages.</p>
   </footer>
 
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Theme toggle (persisted)
+    (function () {
+      const root = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initial = saved || (prefersDark ? 'dark' : 'light');
+      root.setAttribute('data-theme', initial);
+      btn.textContent = initial === 'dark' ? '☀️' : '🌙';
+      btn.addEventListener('click', function () {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        btn.textContent = next === 'dark' ? '☀️' : '🌙';
+        localStorage.setItem('theme', next);
+      });
+    })();
   </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
 </body>
 </html>
