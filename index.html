@@ -44,17 +44,17 @@
         <p class="head__line">Incoming M.S. in Computer Science, Zhejiang University</p>
         <p class="head__line muted">Large language models · post-training &amp; RL for reasoning</p>
         <nav class="links">
-          <a href="mailto:PLACEHOLDER:EMAIL">Email</a> ·
-          <a href="PLACEHOLDER:SCHOLAR">Google&nbsp;Scholar</a> ·
-          <a href="https://github.com/yuanyueyao">GitHub</a> ·
-          <a href="PLACEHOLDER:X">X</a> ·
+          <a href="mailto:PLACEHOLDER:EMAIL">Email</a> <span class="sep">·</span>
+          <a href="PLACEHOLDER:SCHOLAR">Google&nbsp;Scholar</a> <span class="sep">·</span>
+          <a href="https://github.com/yuanyueyao">GitHub</a> <span class="sep">·</span>
+          <a href="PLACEHOLDER:X">X</a> <span class="sep">·</span>
           <a href="assets/cv.pdf">CV</a>
         </nav>
       </div>
     </header>
 
     <!-- ===================== ABOUT ===================== -->
-    <section class="sec">
+    <section class="sec sec--lead">
       <p>
         I am an incoming M.S. student in Computer Science at <strong>Zhejiang University</strong>
         (Sept&nbsp;2026), advised by <span class="ph">PLACEHOLDER:ADVISOR</span>. My research is on
@@ -168,6 +168,8 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    // edit mode: append ?edit to the URL to highlight remaining placeholders in red
+    if (location.search.indexOf('edit') !== -1) document.body.classList.add('editmode');
     (function () {
       const root = document.documentElement, btn = document.getElementById('themeToggle');
       const saved = localStorage.getItem('theme');
