@@ -120,6 +120,14 @@
         <h2 class="sec__h">Research &amp; Projects</h2>
 
         <div class="proj">
+          <div class="proj__head"><span class="proj__t">Masked Self-Distillation for Reflective Mathematical Reasoning</span><span class="proj__d">2025 – 2026 · lead</span></div>
+          <ul class="proj__p">
+            <li>Found that on-policy self-distillation <strong>degrades reflective reasoning</strong>: a reference-conditioned teacher systematically suppresses the student's <strong>epistemic tokens</strong> (e.g. “Wait”) that express uncertainty and drive self-verification.</li>
+            <li>Proposed <strong>masked self-distillation</strong> — a minimal change that excludes epistemic tokens from the distillation loss, preserving reflective behavior; consistently beats naive self-distillation on <strong>AIME24, AIME25, MATH-500</strong>. (EMNLP 2026 submission.)</li>
+          </ul>
+        </div>
+
+        <div class="proj">
           <div class="proj__head"><span class="proj__t">Divergence-Guided RL for LLM Reasoning (DivGRPO)</span><span class="proj__d">2026 – present · lead</span></div>
           <ul class="proj__p">
             <li>Studying credit assignment in GRPO, where a trajectory's final-outcome reward is broadcast to all tokens — mis-crediting correct steps in incorrect trajectories and lucky steps in correct ones.</li>
@@ -144,7 +152,7 @@
         <h2 class="sec__h">Technical Skills</h2>
         <ul class="skills">
           <li><strong>Languages:</strong> Python (proficient); C/C++</li>
-          <li><strong>Machine Learning:</strong> PyTorch; LLM post-training — RLHF (PPO, GRPO), self-distillation; retrieval-augmented generation &amp; information retrieval (dense / sparse / re-ranking, BERT dual-tower); diffusion models; verl; distributed training (FSDP); CUDA</li>
+          <li><strong>Machine Learning:</strong> PyTorch; LLM post-training — RLHF (PPO, GRPO), self-distillation; verl; distributed training (FSDP); CUDA</li>
           <li><strong>Infrastructure:</strong> Linux, tmux, Git; vLLM / SGLang inference</li>
           <li><strong>Languages (spoken):</strong> Chinese (native), English (CET-6, 518)</li>
         </ul>
