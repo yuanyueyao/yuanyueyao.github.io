@@ -2,7 +2,6 @@
 <!--
   ============================================================================
   PERSONAL PLACEHOLDERS TO REPLACE (search for "PLACEHOLDER:"):
-    - PLACEHOLDER:NAME_EN / NAME_ZH   your name (English / 中文)
     - PLACEHOLDER:EMAIL               contact email
     - PLACEHOLDER:SCHOLAR             Google Scholar URL
     - PLACEHOLDER:X                   X/Twitter URL
@@ -12,40 +11,55 @@
     - PLACEHOLDER:AUTHORS             author list per paper
     - PLACEHOLDER:HONORS              honors / awards
     - assets/avatar.jpg               replace with your real photo
-  GitHub (yuanyueyao) and ZJU already filled. Two-column desktop layout
-  (academicpages style): sticky left sidebar + scrolling right content.
-  Visit with ?edit to highlight remaining placeholders in red.
+  Name (Yueyao Yuan / 袁月耀), GitHub (yuanyueyao), ZJU already filled.
+  Mainstream academic layout: sticky top nav + two-column (academicpages style)
+  sticky left sidebar + scrolling content. Visit ?edit to highlight placeholders.
   ============================================================================
 -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PLACEHOLDER:NAME_EN</title>
-  <meta name="description" content="PLACEHOLDER:NAME_EN — incoming M.S. in Computer Science at Zhejiang University. LLM post-training and reinforcement learning for reasoning." />
+  <title>Yueyao Yuan</title>
+  <meta name="description" content="Yueyao Yuan — incoming M.S. in Computer Science at Zhejiang University. LLM post-training and reinforcement learning for reasoning." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PLACEHOLDER:NAME_EN" />
+  <meta property="og:title" content="Yueyao Yuan" />
   <meta property="og:description" content="LLM post-training & reinforcement learning for reasoning. M.S. CS, Zhejiang University." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">☾</button>
+<body id="top">
+
+  <!-- ===================== TOP NAV ===================== -->
+  <header class="topnav">
+    <div class="topnav__inner">
+      <a class="topnav__brand" href="#top">Yueyao&nbsp;Yuan <span class="topnav__brandzh">袁月耀</span></a>
+      <nav class="topnav__links">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="assets/cv.pdf">CV</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">☾</button>
+      </nav>
+    </div>
+  </header>
 
   <div class="layout">
 
     <!-- ===================== LEFT SIDEBAR ===================== -->
     <aside class="sidebar">
-      <img class="sidebar__photo" src="assets/avatar.svg" alt="Portrait of PLACEHOLDER:NAME_EN" />
-      <h1 class="sidebar__name">PLACEHOLDER:NAME_EN</h1>
-      <div class="sidebar__zh">PLACEHOLDER:NAME_ZH</div>
+      <img class="sidebar__photo" src="assets/avatar.svg" alt="Portrait of Yueyao Yuan" />
+      <h1 class="sidebar__name">Yueyao Yuan</h1>
+      <div class="sidebar__zh">袁月耀</div>
       <p class="sidebar__role">Incoming M.S., Computer Science<br />Zhejiang University · 2026</p>
       <p class="sidebar__tag">LLM post-training &amp; RL for reasoning</p>
 
       <ul class="contact">
         <li>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7L3.5 6.5M12 12l8.5-5.5M3 18l6-6m12 6l-6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <a href="mailto:PLACEHOLDER:EMAIL"><span class="ph">PLACEHOLDER:EMAIL</span></a>
+          <a href="mailto:PLACEHOLDER:EMAIL"><span class="ph">Email</span></a>
         </li>
         <li>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM5 13.2V17l7 3.8 7-3.8v-3.8l-7 3.8-7-3.8z" fill="currentColor"/></svg>
@@ -71,11 +85,11 @@
     <!-- ===================== RIGHT MAIN COLUMN ===================== -->
     <main class="main">
 
-      <section class="sec sec--lead">
+      <section id="about" class="sec sec--lead">
         <h2 class="sec__h">About</h2>
         <p>
           I am an incoming M.S. student in Computer Science at <strong>Zhejiang University</strong>
-          (Sept&nbsp;2026), advised by <span class="ph">PLACEHOLDER:ADVISOR</span>. My research is on
+          (Sept&nbsp;2026).<!-- advisor: PLACEHOLDER:ADVISOR --> My research is on
           the <strong>post-training</strong> of large language models — especially
           <strong>reinforcement learning for reasoning</strong>: reward design, credit assignment,
           training stability (entropy dynamics), and the pre-training&nbsp;→&nbsp;SFT&nbsp;→&nbsp;RLHF pipeline.
@@ -87,7 +101,7 @@
         </p>
       </section>
 
-      <section class="sec">
+      <section id="news" class="sec">
         <h2 class="sec__h">News</h2>
         <ul class="news">
           <li><span class="news__d">Sep 2026</span><span>Starting my M.S. in Computer Science at Zhejiang University.</span></li>
@@ -96,25 +110,25 @@
         </ul>
       </section>
 
-      <section class="sec">
+      <section id="publications" class="sec">
         <h2 class="sec__h">Publications &amp; Preprints</h2>
         <p class="muted small">Authors in true contribution order; status marked honestly. <span class="ph">(∗ equal contribution.)</span></p>
 
         <div class="pub">
-          <div class="pub__t ph">PLACEHOLDER:EMNLP_TITLE</div>
-          <div class="pub__a"><span class="ph">PLACEHOLDER:AUTHORS (your position marked)</span></div>
+          <div class="pub__t ph">Title withheld during review</div>
+          <div class="pub__a"><span class="ph">Author list withheld during review</span></div>
           <div class="pub__v"><em>Under review</em>, EMNLP 2026.</div>
         </div>
 
         <div class="pub">
           <div class="pub__t">DivGRPO: Divergence-Guided Asymmetric Credit Assignment for Reasoning RL</div>
-          <div class="pub__a"><span class="me">PLACEHOLDER:NAME_EN</span>, <span class="ph">et al.</span></div>
+          <div class="pub__a"><span class="me">Yueyao Yuan</span>, <span class="ph">et al.</span></div>
           <div class="pub__v"><em>In preparation</em>, targeting AAAI.</div>
           <div class="pub__n">Detects token-level divergence points between correct/incorrect trajectories and applies an asymmetric, multiplicative reweighting of the GRPO advantage in pure token space — no extra model, hidden states, or logits.</div>
         </div>
       </section>
 
-      <section class="sec">
+      <section id="research" class="sec">
         <h2 class="sec__h">Research &amp; Projects</h2>
 
         <div class="proj">
@@ -142,19 +156,19 @@
         </div>
       </section>
 
-      <section class="sec">
+      <section id="education" class="sec">
         <h2 class="sec__h">Education</h2>
         <div class="proj">
           <div class="proj__head"><span class="proj__t">Zhejiang University — College of Computer Science and Technology</span><span class="proj__d">Sep 2026 – Jun 2029 (expected)</span></div>
-          <p class="proj__s">M.S. in Computer Science and Technology · Advisor: <span class="ph">PLACEHOLDER:ADVISOR</span></p>
+          <p class="proj__s">M.S. in Computer Science and Technology · Advisor: <span class="ph">to be announced</span></p>
         </div>
         <div class="proj">
-          <div class="proj__head"><span class="proj__t ph">PLACEHOLDER:UNDERGRAD (undergraduate institution)</span><span class="proj__d ph">20XX – 2026</span></div>
-          <p class="proj__s ph">B.S. in [Major] · GPA [X.XX / 4.0], Rank [X / XX]</p>
+          <div class="proj__head"><span class="proj__t ph">B.S. — undergraduate institution<!-- PLACEHOLDER:UNDERGRAD --></span><span class="proj__d ph">– 2026</span></div>
+          <p class="proj__s ph">Major and details to be added.</p>
         </div>
       </section>
 
-      <section class="sec">
+      <section id="skills" class="sec">
         <h2 class="sec__h">Technical Skills</h2>
         <ul class="skills">
           <li><strong>Languages:</strong> Python (proficient)<span class="ph">, C++ / Java (optional)</span></li>
@@ -164,16 +178,15 @@
         </ul>
       </section>
 
-      <section class="sec">
+      <section id="honors" class="sec">
         <h2 class="sec__h">Honors &amp; Awards</h2>
         <ul class="skills">
-          <li class="ph">PLACEHOLDER:HONORS — scholarship / competition / national-level award (year and rank)</li>
-          <li class="ph">…</li>
+          <li class="ph">To be added.<!-- PLACEHOLDER:HONORS: scholarship / competition / national award, with year and rank --></li>
         </ul>
       </section>
 
       <footer class="foot">
-        <p>© <span id="year"></span> PLACEHOLDER:NAME_EN · built with plain HTML &amp; CSS · hosted on GitHub Pages</p>
+        <p>© <span id="year"></span> Yueyao Yuan · built with plain HTML &amp; CSS · hosted on GitHub Pages</p>
       </footer>
 
     </main>

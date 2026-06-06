@@ -57,6 +57,36 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 .ph { color: inherit; }
 .editmode .ph { color: var(--ph); border-bottom: 1px dotted var(--ph); }
 
+/* ---------------- TOP NAV ---------------- */
+.topnav {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--rule);
+}
+.topnav__inner {
+  max-width: var(--maxw); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 11px 40px; gap: 18px;
+}
+.topnav__brand { color: var(--text); font-weight: 700; font-size: 1.02rem; white-space: nowrap; }
+.topnav__brand:hover { text-decoration: none; }
+.topnav__brandzh { color: var(--muted); font-weight: 500; font-size: 0.92rem; margin-left: 4px; }
+.topnav__links { display: flex; align-items: center; gap: 19px; }
+.topnav__links a { color: var(--muted); font-size: 0.9rem; }
+.topnav__links a:hover { color: var(--link); text-decoration: none; }
+
+/* ---------------- THEME TOGGLE (in nav) ---------------- */
+.theme-toggle {
+  width: 32px; height: 30px; cursor: pointer;
+  border: 1px solid var(--rule-strong); border-radius: 8px;
+  background: var(--bg); color: var(--text);
+  font-size: 0.92rem; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.theme-toggle:hover { border-color: var(--link); }
+
 /* ---------------- LAYOUT ---------------- */
 .layout {
   max-width: var(--maxw);
@@ -64,24 +94,13 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   display: grid;
   grid-template-columns: var(--sidebar-w) 1fr;
   gap: 56px;
-  padding: 56px 40px 64px;
+  padding: 40px 40px 64px;
   align-items: start;
 }
 
-/* ---------------- THEME TOGGLE ---------------- */
-.theme-toggle {
-  position: fixed; top: 16px; right: 18px; z-index: 10;
-  width: 34px; height: 32px; cursor: pointer;
-  border: 1px solid var(--rule-strong); border-radius: 8px;
-  background: var(--bg); color: var(--text);
-  font-size: 0.95rem; line-height: 1;
-  display: inline-flex; align-items: center; justify-content: center;
-}
-.theme-toggle:hover { border-color: var(--link); }
-
 /* ---------------- SIDEBAR ---------------- */
 .sidebar {
-  position: sticky; top: 56px;
+  position: sticky; top: 76px;
   text-align: center;
 }
 .sidebar__photo {
@@ -108,7 +127,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 /* ---------------- MAIN CONTENT ---------------- */
 .main { min-width: 0; padding-top: 4px; }
 
-.sec { margin: 0 0 30px; }
+.sec { margin: 0 0 30px; scroll-margin-top: 64px; }
 .sec--lead .sec__h { margin-top: 0; }
 .sec__h {
   font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
@@ -156,9 +175,17 @@ code {
 
 /* ---------------- RESPONSIVE: collapse to single column ---------------- */
 @media (max-width: 820px) {
-  .layout { grid-template-columns: 1fr; gap: 30px; padding: 40px 22px 48px; }
+  .topnav__inner { padding: 10px 22px; }
+  .topnav__links { gap: 14px; }
+  .layout { grid-template-columns: 1fr; gap: 30px; padding: 30px 22px 48px; }
   .sidebar { position: static; text-align: center; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
   .sidebar__photo { width: 128px; height: 128px; }
   .contact { display: inline-flex; flex-wrap: wrap; gap: 6px 18px; justify-content: center; }
   .contact li { padding: 2px 0; }
+}
+
+/* hide section nav links on phones; keep brand + CV + theme toggle */
+@media (max-width: 560px) {
+  .topnav__links a[href^="#"] { display: none; }
+  .topnav__brandzh { display: none; }
 }
